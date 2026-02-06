@@ -19,6 +19,7 @@ Meu foco é melhorar cada vez mais como desenvolvedora, transformando cada linha
 ## 📅 Diário
 
 **Dia 1**: Configuração do ambiente e comandos básicos.
+
 **Dia 2**: Calculadora de Tip.
 
 ---
