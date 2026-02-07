@@ -9,8 +9,7 @@ Bem-vindo ao meu desafio de 100 dias de código! Aqui documento a minha jornada 
 ## 📚 Sobre o Desafio
 Este bootcamp tem o objetivo de consolidar meus conhecimentos em:
 * **Lógica de Programação** e algoritmos.
-* **Estruturas de Dados** complexas.
-* **Integração com Bancos de Dados SQL** (aplicando o que aprendo na UCB).
+* **Integração com Bancos de Dados SQL**
 
 Meu foco é melhorar cada vez mais como desenvolvedora, transformando cada linha de código em um passo rumo à minha primeira oportunidade na área.
 
