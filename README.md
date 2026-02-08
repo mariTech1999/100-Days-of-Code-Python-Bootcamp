@@ -21,6 +21,10 @@ Meu foco é melhorar cada vez mais como desenvolvedora, transformando cada linha
 
 **Dia 2**: Calculadora de Tip.
 
+**Dia 3**: Find the treasure
+
+**Dia 4**: Rock Paper Scissors
+
 ---
 
 ## 🛠️ Tecnologias e Ferramentas
