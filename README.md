@@ -25,6 +25,10 @@ Meu foco é melhorar cada vez mais como desenvolvedora, transformando cada linha
 
 **Dia 4**: Rock Paper Scissors
 
+**Dia 5**: Password Generator
+
+**Dia 6**: Reeborg's World
+
 ---
 
 ## 🛠️ Tecnologias e Ferramentas
