@@ -29,6 +29,10 @@ Meu foco é melhorar cada vez mais como desenvolvedora, transformando cada linha
 
 **Dia 6**: Reeborg's World
 
+**Dia 7**:  Hangman
+
+**Dia 8**: Caesar Cipher
+
 ---
 
 ## 🛠️ Tecnologias e Ferramentas
