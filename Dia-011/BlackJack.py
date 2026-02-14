@@ -2,15 +2,11 @@ import art
 import random
 
 def soma(hand):
-    total = 0
-    for carta in hand:
-        total += carta
+    total = sum(hand)
 
     while total > 21 and 11 in hand:
-        posicao = hand.index(11)
-        hand[posicao] = 1
-        total -= 10
-
+        hand[hand.index(11)] = 1
+        total = sum(hand)
     return total
 
 def start_deck():
@@ -31,70 +27,60 @@ def card_distribution(deck):
     return p_hand, c_hand
 
 
-
 def blackjack():
-
     deck = start_deck()
     player_hand, computer_hand = card_distribution(deck)
-
     player_score = soma(player_hand)
-    print(f"Your hand: {player_hand}, current score: {player_score}")
-
     computer_score = soma(computer_hand)
-    print(f" Computer's first card: {computer_hand[1]}")
 
-    another_card = input("Type 'y' to get another card or type 'n' to pass: ").lower()
-    while another_card == 'y':
-        player_hand.append(deck.pop())
-        player_score = soma(player_hand)
-
-        if player_score > 21:
-            print(f"Your hand: {player_hand}, score: {player_score}")
-            print(f"Computer's hand: {computer_hand}, score: {computer_score}")
-            print("You Lose!")
-            return
+    if player_score == 21 or computer_score == 21:
+        print(f"Your final hand: {player_hand}, score: {player_score}")
+        print(f"Computer's final hand: {computer_hand}, score: {computer_score}")
+        if player_score == 21 and computer_score == 21:
+            print("Draw! Both have Blackjack!")
+        elif player_score == 21:
+            print("BLACKJACK! You won!")
         else:
-            print(f"Your hand: {player_hand}, score: {player_score}")
-            print(f" Computer's first card: {computer_hand[1]}")
-            another_card = input("Type 'y' to get another card or type 'n' to pass: ").lower()
+            print("Blackjack! You lose!")
+        return
+    game_over = False
+    while not game_over:
+        print(f"Your hand: {player_hand}, score atual: {player_score}")
+        print(f"Computer first card: {computer_hand[0]}")
 
-    while computer_score < 17:
-        computer_hand.append(deck.pop())
-        computer_score = soma(computer_hand)
-        if computer_score > 21:
-            print(f"Computer's hand: {computer_hand}, score: {computer_score}")
-            print("You Win!")
-            return
+        user_choice = input("Type 'y' for another card or 'n' to pass: ").lower()
 
-    if player_score > computer_score:
-        print(f"Your hand: {player_hand}, score: {player_score}")
-        print(f"Computer's hand: {computer_hand}, score: {computer_score}")
+        if user_choice == 'y':
+            player_hand.append(deck.pop())
+            player_score = soma(player_hand)
+
+            if player_score >= 21:
+                game_over = True
+        else:
+            game_over = True
+    if player_score <= 21:
+        while computer_score < 17:
+            computer_hand.append(deck.pop())
+            computer_score = soma(computer_hand)
+
+    print(f"Your final hand: {player_hand}, score: {player_score}")
+    print(f"Computer's final hand: {computer_hand}, score: {computer_score}")
+
+    if player_score > 21:
+        print("You Lose! (Busted)")
+    elif computer_score > 21:
+        print("You Win! Computer busted!")
+    elif player_score > computer_score:
         print("You Win!")
-        return
-
-    elif player_score == computer_score:
-        print(f"Your hand: {player_hand}, score: {player_score}")
-        print(f"Computer's hand: {computer_hand}, score: {computer_score}")
-        print("It's a Draw!")
-        return
-
-    else:
-        print(f"Your hand: {player_hand}, score: {player_score}")
-        print(f"Computer's hand: {computer_hand}, score: {computer_score}")
+    elif player_score < computer_score:
         print("You Lose!")
-        return
-
+    else:
+        print("Draw!")
 print(art.logo)
 
-play = input("Do you want to play a game of BlackJack? Typer 'y' or 'n': ").lower()
-if play == 'y':
-    play = True
-
-while play:
-    print(art.logo)
+while input("Do you want to play BlackJack? Type 'y' or 'n': ").lower() == 'y':
 
     blackjack()
-    play = input("Do you want to play a game of BlackJack? Typer 'y' or 'n': ").lower()
+    input("\nPressione ENTER para continuar...")
     print("\n"*30)
-    if play == 'n':
-        play = False
+    print(art.logo)
