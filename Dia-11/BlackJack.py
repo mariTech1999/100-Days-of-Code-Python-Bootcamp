@@ -72,6 +72,12 @@ def blackjack():
         print("You Win!")
         return
 
+    elif player_score == computer_score:
+        print(f"Your hand: {player_hand}, score: {player_score}")
+        print(f"Computer's hand: {computer_hand}, score: {computer_score}")
+        print("It's a Draw!")
+        return
+
     else:
         print(f"Your hand: {player_hand}, score: {player_score}")
         print(f"Computer's hand: {computer_hand}, score: {computer_score}")
