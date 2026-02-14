@@ -47,31 +47,16 @@ def blackjack():
     while another_card == 'y':
         player_hand.append(deck.pop())
         player_score = soma(player_hand)
-        print(f"Your hand: {player_hand}, score: {player_score}")
-
-        if computer_score < 17:
-            computer_hand.append(deck.pop())
-            computer_score = soma(computer_hand)
-            if computer_score > 21:
-                print(f"Computer's hand: {computer_hand}, score: {computer_score}")
-                print("You Win!")
-                return
 
         if player_score > 21:
-            print(f"Computer's hand: {computer_hand}, score: {computer_score}")
-            print("You Lose!")
-            return
-        elif player_score > computer_score:
             print(f"Your hand: {player_hand}, score: {player_score}")
             print(f"Computer's hand: {computer_hand}, score: {computer_score}")
-            print("You Win!")
+            print("You Lose!")
             return
         else:
             print(f"Your hand: {player_hand}, score: {player_score}")
-            print(f"Computer's hand: {computer_hand}, score: {computer_score}")
-            print("You Lose!")
-            return
-
+            print(f" Computer's first card: {computer_hand[1]}")
+            another_card = input("Type 'y' to get another card or type 'n' to pass: ").lower()
 
     while computer_score < 17:
         computer_hand.append(deck.pop())
@@ -80,11 +65,13 @@ def blackjack():
             print(f"Computer's hand: {computer_hand}, score: {computer_score}")
             print("You Win!")
             return
+
     if player_score > computer_score:
         print(f"Your hand: {player_hand}, score: {player_score}")
         print(f"Computer's hand: {computer_hand}, score: {computer_score}")
         print("You Win!")
         return
+
     else:
         print(f"Your hand: {player_hand}, score: {player_score}")
         print(f"Computer's hand: {computer_hand}, score: {computer_score}")
