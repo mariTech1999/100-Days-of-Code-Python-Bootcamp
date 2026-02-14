@@ -89,5 +89,6 @@ while play:
 
     blackjack()
     play = input("Do you want to play a game of BlackJack? Typer 'y' or 'n': ").lower()
+    print("\n"*30)
     if play == 'n':
         play = False
