@@ -33,6 +33,22 @@ Meu foco é melhorar cada vez mais como desenvolvedora, transformando cada linha
 
 **Dia 8**: Caesar Cipher
 
+**Dia 9**: Bid
+
+**Dia 10**: Calculator
+
+**Dia 11**: Blackjack
+
+**Dia 12**: Guess the name
+
+**Dia 13**: Debugging: How to Find and Fix Errors
+
+**Dia 14**: Higher Lower Game
+
+**Dia 15**: Coffee Machine
+
+
+
 ---
 
 ## 🛠️ Tecnologias e Ferramentas
