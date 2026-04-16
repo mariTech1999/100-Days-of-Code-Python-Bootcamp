@@ -14,7 +14,12 @@ import smtplib
 import random
 import csv
 import pandas as pd
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
+my_email = os.getenv("EMAIL")
+password = os.getenv("PASSWORD")
 now = dt.datetime.now()
 today = (now.month, now.day)
 
@@ -22,9 +27,6 @@ reader = pd.read_csv('birthdays.csv')
 birthday_dict = {(row.month, row.day):row for (index, row) in reader.iterrows()}
 
 letters = ["letter_templates/letter_1.txt", "letter_templates/letter_2.txt", "letter_templates/letter_3.txt"]
-
-my_email = "udemytest1212@gmail.com"
-password = "lmwo qoih mmeq vdkf"
 
 if today in birthday_dict:
     letter = random.choice(letters)
